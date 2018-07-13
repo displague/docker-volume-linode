@@ -38,6 +38,3 @@ docker plugin rm -f ${PLUGIN_NAME} || true
 echo "docker plugin create ${PLUGIN_NAME} ./plugin"
 docker plugin create ${PLUGIN_NAME} ./plugin
 ##############################
-#echo "docker save -o ${PLUGIN_NAME_TAR} ${PLUGIN_NAME}"
-#docker save -o ${PLUGIN_NAME_TAR} ${PLUGIN_NAME}
-##############################

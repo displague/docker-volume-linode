@@ -8,7 +8,6 @@ export PLUGIN_NAME=libgolang/docker-volume-linode:${TRAVIS_BRANCH}.${TRAVIS_BUIL
 export PLUGIN_NAME_TAR=docker-volume-linode_${TRAVIS_BRANCH}.${TRAVIS_BUILD_NUMBER}.tar
 
 ##############################
-docker load -i ${PLUGIN_NAME_TAR}
 echo "$DOCKER_PASSWORD" | docker login -u libgolang --password-stdin
 docker plugin push ${PLUGIN_NAME}
 
