@@ -2,10 +2,8 @@
 
 set -e
 
-##############################
-export PLUGIN_NAME_ROOTFS=docker-volume-linode:rootfs-${TRAVIS_BUILD_NUMBER}
-export PLUGIN_NAME=libgolang/docker-volume-linode:${TRAVIS_BRANCH}.${TRAVIS_BUILD_NUMBER}
-export PLUGIN_NAME_TAR=docker-volume-linode_${TRAVIS_BRANCH}.${TRAVIS_BUILD_NUMBER}.tar
+scriptDir=`dirname $(readlink -f $0)`
+source $scriptDir/common.sh
 
 ##############################
 echo "go get -u github.com/golang/dep/cmd/dep"
