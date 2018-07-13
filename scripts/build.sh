@@ -4,7 +4,7 @@ set -e
 
 ##############################
 export PLUGIN_NAME_ROOTFS=docker-volume-linode:rootfs-${TRAVIS_BUILD_NUMBER}
-export PLUGIN_NAME=docker-volume-linode:${TRAVIS_BRANCH}.${TRAVIS_BUILD_NUMBER}
+export PLUGIN_NAME=libgolang/docker-volume-linode:${TRAVIS_BRANCH}.${TRAVIS_BUILD_NUMBER}
 export PLUGIN_NAME_TAR=docker-volume-linode_${TRAVIS_BRANCH}.${TRAVIS_BUILD_NUMBER}.tar
 
 ##############################
@@ -38,6 +38,6 @@ docker plugin rm -f ${PLUGIN_NAME} || true
 echo "docker plugin create ${PLUGIN_NAME} ./plugin"
 docker plugin create ${PLUGIN_NAME} ./plugin
 ##############################
-echo "docker save -o ${PLUGIN_NAME_TAR} ${PLUGIN_NAME}"
-docker save -o ${PLUGIN_NAME_TAR} ${PLUGIN_NAME}
+#echo "docker save -o ${PLUGIN_NAME_TAR} ${PLUGIN_NAME}"
+#docker save -o ${PLUGIN_NAME_TAR} ${PLUGIN_NAME}
 ##############################
