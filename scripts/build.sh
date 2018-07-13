@@ -5,6 +5,7 @@ set -ev
 ##############################
 export PLUGIN_NAME_ROOTFS=docker-volume-linode:rootfs-${TRAVIS_BUILD_NUMBER}
 export PLUGIN_NAME=docker-volume-linode:${TRAVIS_BRANCH}.${TRAVIS_BUILD_NUMBER}
+export PLUGIN_NAME_TAR=docker-volume-linode_${TRAVIS_BRANCH}.${TRAVIS_BUILD_NUMBER}.tar
 
 ##############################
 go get -u github.com/golang/dep/cmd/dep
@@ -26,4 +27,6 @@ docker rm -vf tmp
 docker plugin rm -f ${PLUGIN_NAME} || true
 ##############################
 docker plugin create ${PLUGIN_NAME} ./plugin
+##############################
+docker save -o ${PLUGIN_NAME_TAR} ${PLUGIN_NAME}
 ##############################
